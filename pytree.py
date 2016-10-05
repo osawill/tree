@@ -25,9 +25,9 @@ def printDir(root, level=0, last=False, parent=0):
         numDir += 1
         # Check if we're in the last folder of the parent directory
         if(last):
-            print(("   " * (parent - 1)) + ("|   " * (level - parent - 1)) + '`-- ' + basename(root))
+            print(("    " * (parent - 1)) + ("|   " * (level - parent - 1)) + '`-- ' + basename(root))
         else:
-            print(("   " * (parent)) + ("|   " * (level - parent - 1)) + '|-- ' + basename(root))
+            print(("    " * (parent)) + ("|   " * (level - parent - 1)) + '|-- ' + basename(root))
 
     for idx, item in enumerate(items):
         item = root + '/' + item
@@ -53,7 +53,7 @@ def printDir(root, level=0, last=False, parent=0):
 def printFile(fil, level, last=False, lastLvl=0):
     # Print out files
     # Add correct spacing
-    spacing = ("   " * lastLvl) + ('|   ' * (level - lastLvl))
+    spacing = ("    " * lastLvl) + ('|   ' * (level - lastLvl))
     # Print filenames
     if(last):
         indent = spacing + '`-- '
